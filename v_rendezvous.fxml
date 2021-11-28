@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="512.0" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AffectationController">
+   <children>
+      <FontAwesomeIcon fill="#2196f3" glyphName="SEARCH" layoutX="206.0" layoutY="39.0" onMouseClicked="#handleSearchProfByNci" size="2em" wrappingWidth="26.0" />
+      <TextField fx:id="txtNCI" layoutX="5.0" layoutY="13.0" prefHeight="31.0" prefWidth="198.0" promptText="NCI" />
+      <TextField fx:id="txtNom" layoutX="5.0" layoutY="67.0" prefHeight="31.0" prefWidth="198.0" promptText="Nom et Prénom" />
+      <TextField fx:id="txtGrade" layoutX="5.0" layoutY="132.0" prefHeight="31.0" prefWidth="198.0" promptText="Grade" />
+      <FontAwesomeIcon fill="#2196f3" glyphName="PLUS" layoutX="487.0" layoutY="36.0" onMouseClicked="#handleAddClassProf" size="2em" text="" />
+      <TableView fx:id="tblClasse" layoutX="259.0" layoutY="53.0" prefHeight="116.0" prefWidth="250.0">
+        <columns>
+          <TableColumn fx:id="tblId" prefWidth="130.0" text="Id" />
+          <TableColumn fx:id="tblLibelle" prefWidth="177.0" text="Libellé" />
+        </columns>
+      </TableView>
+      <Button layoutX="265.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleReset" style="-fx-background-color: gray;" text="Annuler" />
+      <Button layoutX="414.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleAffectationProf" style="-fx-background-color: #2196f3;" text="Enregistrer" />
+      <Text fill="#f40404" layoutX="6.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NCI est obligatoire" />
+      <Text fill="#ee0303" layoutX="-86.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login est obligatoire" visible="false" />
+      <Text fill="#eb0d0d" layoutX="-87.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade est obligatoire" visible="false" />
+      <Text fill="#f20a0a" layoutX="9.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom et Prénom est obligatoire" />
+      <TableView fx:id="tblProfesseur" layoutY="223.0" prefHeight="204.0" prefWidth="513.0">
+        <columns>
+          <TableColumn fx:id="tblNCI" prefWidth="158.0" text="NCI" />
+          <TableColumn fx:id="tblNom" minWidth="0.0" prefWidth="185.0" text="Nom et Prénom" />
+            <TableColumn fx:id="tblGrade" prefWidth="168.0" text="Grade" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cboClasse" layoutX="259.0" layoutY="10.0" prefHeight="31.0" prefWidth="222.0" promptText="Classe" style="-fx-background-color: #2196f3;" />
+   </children>
+</AnchorPane>

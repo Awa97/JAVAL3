@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.InscriptionController">
+   <children>
+      <GridPane layoutX="1.0" layoutY="203.0" prefHeight="61.0" prefWidth="500.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="61.0" prefWidth="500.0">
+                     <children>
+                        <ComboBox fx:id="cboSearch" layoutX="26.0" layoutY="15.0" prefWidth="150.0" promptText="Annee" />
+                        <ComboBox fx:id="cboSearchDepatement" layoutX="303.0" layoutY="15.0" prefWidth="150.0" promptText="Classe" />
+                        <FontAwesomeIcon fill="#0900ff" glyphName="SEARCH" layoutX="467.0" layoutY="37.0" onMouseClicked="#handleSearchEtudiantByAnneeOrClasse" size="1.4em" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <TextField fx:id="matricule" layoutX="29.0" layoutY="42.0" promptText="Matricule" />
+      <TextField fx:id="tuteur" layoutX="258.0" layoutY="42.0" prefHeight="31.0" prefWidth="211.0" promptText="Tuteur" />
+      <TextField fx:id="nomComplet" layoutX="29.0" layoutY="117.0" promptText="Nom et Prénom" />
+      <ComboBox fx:id="cboDepatement" layoutX="258.0" layoutY="117.0" prefHeight="31.0" prefWidth="211.0" promptText="Classe" style="-fx-background-color: skyblue;" />
+      <TextField layoutX="258.0" layoutY="164.0" prefHeight="31.0" prefWidth="33.0" promptText="0" />
+      <Button layoutX="302.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleAnnuler" prefHeight="31.0" prefWidth="72.0" style="-fx-background-color: red;" text="Annuler" textFill="WHITE" />
+      <Button layoutX="384.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleEnregistrer" style="-fx-background-color: green;" text="Enregistrer" textFill="WHITE" />
+      <TableView fx:id="tblInscription" layoutX="-2.0" layoutY="264.0" prefHeight="237.0" prefWidth="500.0">
+        <columns>
+          <TableColumn fx:id="tblMat" prefWidth="149.0" text="Matricule" />
+          <TableColumn fx:id="tblNom" minWidth="0.0" prefWidth="197.0" text="Nom et Prénom" />
+            <TableColumn fx:id="tblDepatement" prefWidth="152.0" text="Depatement" />
+        </columns>
+      </TableView>
+      <Text fx:id="txtMat" fill="RED" layoutX="29.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Label" visible="false">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtNom" fill="RED" layoutX="29.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Label" visible="false">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Text>
+      <FontAwesomeIcon fill="#0900ff" glyphName="SEARCH" layoutX="219.0" layoutY="65.0" onMouseClicked="#handleSearch" size="1.4em" />
+   </children>
+</AnchorPane>
